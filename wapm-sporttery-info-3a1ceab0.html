@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>竞彩知识库 · 指向 wapm-sporttery 的说明页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #fafbfc;
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+            line-height: 1.65;
+            color: #1e2a3a;
+            padding: 2.5rem 1.25rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .page-wrap {
+            max-width: 780px;
+            width: 100%;
+        }
+
+        /* 标题层级 */
+        h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            margin-top: 0.5rem;
+            margin-bottom: 0.25rem;
+            color: #0c1628;
+        }
+
+        .subhead {
+            font-size: 1.15rem;
+            font-weight: 400;
+            color: #4a5b70;
+            margin-bottom: 2rem;
+            border-left: 3px solid #b6c8dd;
+            padding-left: 1rem;
+        }
+
+        h2 {
+            font-size: 1.35rem;
+            font-weight: 500;
+            margin: 2.2rem 0 1rem 0;
+            color: #1e2e44;
+            border-bottom: 1px solid #e0e6ed;
+            padding-bottom: 0.4rem;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin: 1.6rem 0 0.6rem 0;
+            color: #1f344b;
+        }
+
+        p {
+            margin-bottom: 1.1rem;
+        }
+
+        a {
+            color: #1a4d8c;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(26, 77, 140, 0.25);
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        a:hover {
+            border-bottom-color: #1a4d8c;
+            color: #0c2d54;
+        }
+
+        /* 卡片区 —— 知识库目录感 */
+        .card-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.25rem;
+            margin: 1.6rem 0 2rem 0;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 1.5rem 1.4rem;
+            flex: 1 1 200px;
+            min-width: 160px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02), 0 6px 16px rgba(0,0,0,0.03);
+            transition: box-shadow 0.2s;
+            border: 1px solid #eef2f7;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04), 0 12px 28px rgba(0,0,0,0.04);
+        }
+
+        .card-title {
+            font-weight: 600;
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+            color: #14273e;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #374b62;
+            margin-bottom: 0.2rem;
+        }
+
+        .card .tag {
+            display: inline-block;
+            background: #edf2f9;
+            border-radius: 30px;
+            padding: 0.1rem 0.65rem;
+            font-size: 0.8rem;
+            color: #2e4b6e;
+            margin-top: 0.5rem;
+        }
+
+        /* 提示 / 说明区块 */
+        .notice-box {
+            background: #f3f7fd;
+            border-radius: 18px;
+            padding: 1.4rem 1.6rem;
+            margin: 1.8rem 0;
+            border-left: 4px solid #3d74b6;
+        }
+
+        .info-box {
+            background: #ffffff;
+            border: 1px solid #dde3ec;
+            border-radius: 16px;
+            padding: 1.3rem 1.5rem;
+            margin: 1.6rem 0;
+        }
+
+        .info-box strong {
+            color: #1a3b60;
+        }
+
+        .faq-item {
+            padding: 0.8rem 0;
+            border-bottom: 1px dashed #dce2ec;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-q {
+            font-weight: 500;
+            margin-bottom: 0.2rem;
+            color: #1f3147;
+        }
+
+        .faq-a {
+            color: #3a4f68;
+            font-size: 0.95rem;
+        }
+
+        .footer-note {
+            margin-top: 3rem;
+            font-size: 0.9rem;
+            color: #5f738b;
+            border-top: 1px solid #e2e9f0;
+            padding-top: 1.5rem;
+            text-align: left;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e4eaf2;
+            margin: 1.8rem 0;
+        }
+
+        /* 窄正文 + 响应式 */
+        @media (max-width: 540px) {
+            body {
+                padding: 1.5rem 1rem;
+            }
+            h1 {
+                font-size: 1.7rem;
+            }
+            .card {
+                flex: 1 1 100%;
+            }
+            .notice-box, .info-box {
+                padding: 1rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrap">
+
+    <h1>竞彩知识库</h1>
+    <div class="subhead">围绕主题 · 梳理信息 · 指向 wapm-sporttery</div>
+
+    <p>
+        体育竞猜的资讯与规则常常分散各处，为了方便了解核心概念，这里整理了一份指向清晰的说明页。
+        所有内容均围绕“竞彩”展开，不包含预测、诱导或盈利承诺，仅作为客观的信息聚合。
+        如果你希望直接体验赛事数据与投注参考，可以前往 <a href="https://wapm-sporttery.com">竞彩网</a>。
+    </p>
+
+    <!-- 目录感卡片布局 -->
+    <h2>📋 内容索引</h2>
+    <div class="card-grid">
+        <div class="card">
+            <div class="card-title">玩法概览</div>
+            <p>胜负彩 · 让球胜平负 · 比分 · 总进球数 · 半全场</p>
+            <span class="tag">基础</span>
+        </div>
+        <div class="card">
+            <div class="card-title">数据规则</div>
+            <p>奖金计算 · 过关方式 · 赔率浮动 · 无效场次处理</p>
+            <span class="tag">说明</span>
+        </div>
+        <div class="card">
+            <div class="card-title">赛事覆盖</div>
+            <p>五大联赛 · 欧冠 · 亚冠 · 日韩 · 美洲赛事 · 国际赛</p>
+            <span class="tag">范围</span>
+        </div>
+        <div class="card">
+            <div class="card-title">实用功能</div>
+            <p>比分直播 · 赛程日历 · 即时赔率 · 个人注单</p>
+            <span class="tag">工具</span>
+        </div>
+    </div>
+
+    <!-- 说明区 -->
+    <h2>📌 关于竞彩的基本认知</h2>
+    <p>
+        竞彩是一种以体育赛事为对象的竞猜型彩票，由官方统一发行。每场比赛根据双方实力、近期状态、主客因素等开出初始赔率（奖金指数），
+        用户可在赛前或赛中选择不同结果进行投注。与传统数字型彩票不同，竞彩的结果与真实比赛挂钩，具有极强的赛事关联性。
+    </p>
+    <p>
+        目前覆盖的赛事包括欧洲主流联赛、国内联赛、洲际杯赛以及部分友谊赛。每场比赛的奖金指数会随投注比例动态调整，
+        最终中奖金额以票面打印时的赔率为准。值得留意的是，竞彩并不保证“必赢”，一切以实际比赛结果为准。
+    </p>
+
+    <!-- 提示区 -->
+    <div class="notice-box">
+        <strong>🧭 理性参与提示</strong>
+        <p style="margin: 0.4rem 0 0 0;">
+            竞猜是娱乐行为，建议提前设定预算，不追注、不借贷。未成年人不得参与。
+            了解规则比盲目跟单更重要，每场比赛的赔率变化背后都有信息逻辑，值得花时间研究。
+        </p>
+    </div>
+
+    <!-- 相关信息区 + FAQ 摘要 -->
+    <h2>❓ 常见问题摘要</h2>
+    <div class="info-box">
+        <div class="faq-item">
+            <div class="faq-q">竞彩的过关投注是什么意思？</div>
+            <div class="faq-a">选择两场或以上比赛串在一起投注，必须全部命中才能中奖，奖金为各场赔率相乘。如果有一场猜错则整单不中。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">比赛取消或延期怎么算？</div>
+            <div class="faq-a">若比赛在规定时间内未进行或提前结束，该场赔率按1计算（即不参与奖金乘法），过关剩余场次继续有效。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">赔率是实时变动的吗？</div>
+            <div class="faq-a">是的。从开售到截止前，赔率会根据投注分布与赛事信息产生波动，最终以出票时刻为准。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">如何查询历史赛果和奖级？</div>
+            <div class="faq-a">在 <a href="https://wapm-sporttery.com">竞彩网</a> 的“赛果”栏目可以查看已结束比赛的实际比分与对应奖金。</div>
+        </div>
+    </div>
+
+    <!-- 场景与延伸 -->
+    <h2>🔍 常见使用场景</h2>
+    <p>
+        许多用户习惯在比赛开始前浏览当日对阵，结合球队伤停、首发名单、近期战绩等做出判断。
+        部分人也会利用赔率变化辅助分析热度方向。需要注意的是，赔率高低并不代表事件发生的概率精确值，
+        市场情绪和资金流向同样会影响数字。
+    </p>
+    <p>
+        如果你希望获取最直接的数据，可以随时打开 <a href="https://wapm-sporttery.com">竞彩网</a>
+        查看实时赛程、比分及奖金指数。页面结构清晰，适应移动端操作，适合在通勤或空闲时浏览信息。
+    </p>
+
+    <!-- 附加说明区 -->
+    <hr>
+    <div class="info-box" style="border-left: 4px solid #869bb3;">
+        <strong>📎 相关信息</strong>
+        <p style="margin-top: 0.4rem;">
+            本页面为知识库入口式介绍页，所有描述均基于公开规则与普遍认知，不构成任何投注建议。
+            竞彩是国家公益彩票的一部分，每一笔投注都包含公益金提取，用于支持体育事业和社会福利。
+        </p>
+    </div>
+
+    <div class="footer-note">
+        最后更新 · 2025 · 内容仅供参考 · 具体规则以官方最新公告为准
+    </div>
+
+</div>
+</body>
+</html>
