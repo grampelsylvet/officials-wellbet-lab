@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>竞彩知识 · 主题入口</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f1f3f5;
+            color: #1e1e2a;
+            line-height: 1.6;
+            padding: 2rem 1.2rem;
+        }
+        .container {
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+
+        /* 目录感布局：网格卡片 */
+        .grid-toc {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1.6rem;
+            margin: 2.5rem 0 2rem 0;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 18px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.03);
+            border: 1px solid #e6e9ed;
+            padding: 1.8rem 1.5rem;
+            transition: box-shadow 0.2s, transform 0.15s;
+        }
+        .card:hover {
+            box-shadow: 0 8px 20px rgba(0, 20, 40, 0.06);
+            transform: translateY(-2px);
+        }
+        .card h3 {
+            font-size: 1.2rem;
+            font-weight: 550;
+            margin-bottom: 0.75rem;
+            letter-spacing: 0.02em;
+            color: #232b36;
+            border-left: 3px solid #7f8fa6;
+            padding-left: 0.75rem;
+        }
+        .card p {
+            font-size: 0.95rem;
+            color: #3a424e;
+            margin-bottom: 0.25rem;
+        }
+        .card .meta-tag {
+            display: inline-block;
+            background: #eef1f5;
+            border-radius: 40px;
+            padding: 0.2rem 0.8rem;
+            font-size: 0.75rem;
+            color: #3d4a5c;
+            margin-top: 0.8rem;
+            border: 1px solid #d9dee5;
+        }
+
+        /* hero 区 */
+        .hero {
+            text-align: left;
+            padding: 1.2rem 0 1.8rem 0;
+            border-bottom: 1px dashed #d0d5dc;
+        }
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 440;
+            letter-spacing: 0.01em;
+            color: #1f2833;
+            margin-bottom: 0.4rem;
+        }
+        .hero .sub {
+            font-size: 1rem;
+            color: #4c5a6b;
+            max-width: 680px;
+            background: #ffffffd0;
+            padding: 0.6rem 1rem;
+            border-radius: 60px;
+            backdrop-filter: blur(2px);
+            border: 1px solid #e3e7ed;
+            display: inline-block;
+        }
+
+        /* 说明 · 提示 · 相关信息区 */
+        .info-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            margin: 2rem 0 2.8rem 0;
+        }
+        .info-box {
+            flex: 1 1 200px;
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 1.6rem 1.5rem;
+            border: 1px solid #e6e9ed;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.02);
+        }
+        .info-box h4 {
+            font-size: 1rem;
+            font-weight: 540;
+            color: #2f3b4a;
+            margin-bottom: 0.7rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .info-box ul, .info-box p {
+            font-size: 0.9rem;
+            color: #384452;
+            margin-bottom: 0.4rem;
+        }
+        .info-box ul {
+            padding-left: 1.2rem;
+        }
+        .info-box li {
+            margin-bottom: 0.3rem;
+        }
+        .highlight {
+            background: #f6f8fa;
+            border-left: 4px solid #8996a8;
+            padding: 0.8rem 1.2rem;
+            border-radius: 12px;
+            margin: 2rem 0 1rem 0;
+            font-size: 0.95rem;
+            color: #2a3441;
+        }
+
+        a {
+            color: #2f4b7a;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            font-weight: 470;
+            transition: border-color 0.15s;
+        }
+        a:hover {
+            border-bottom-color: #2f4b7a;
+        }
+
+        .footer-note {
+            margin-top: 3.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #d7dce3;
+            font-size: 0.85rem;
+            color: #5a697c;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+        .footer-note span {
+            background: #eef1f5;
+            padding: 0.2rem 0.9rem;
+            border-radius: 40px;
+            border: 1px solid #d9dee5;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 1.5rem 1rem; }
+            .hero h1 { font-size: 1.8rem; }
+            .grid-toc { grid-template-columns: 1fr; }
+            .info-section { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- hero -->
+    <div class="hero">
+        <h1>竞彩 · 主题知识库</h1>
+        <div class="sub">从焦点赛事到数据思路 · 围绕竞彩网延伸的阅读框架</div>
+    </div>
+
+    <!-- 目录感卡片：四个知识板块 -->
+    <div class="grid-toc">
+        <div class="card">
+            <h3>赛事结构</h3>
+            <p>联赛、杯赛、国际赛周期；竞彩常见赛事类型与轮次特点。</p>
+            <span class="meta-tag">对阵 · 分级</span>
+        </div>
+        <div class="card">
+            <h3>数据思路</h3>
+            <p>胜平负分布、让球趋势、主客场波动，辅助分析的方法概述。</p>
+            <span class="meta-tag">统计 · 倾向</span>
+        </div>
+        <div class="card">
+            <h3>资讯与动态</h3>
+            <p>伤停、大名单、赛前发布会要点；信息整合的常规关注点。</p>
+            <span class="meta-tag">时效 · 情报</span>
+        </div>
+        <div class="card">
+            <h3>规则与术语</h3>
+            <p>让球、过关方式、奖金计算；基础概念与常见疑问说明。</p>
+            <span class="meta-tag">名词 · 机制</span>
+        </div>
+    </div>
+
+    <!-- 说明区 + 提示区 + 相关信息区 用 info-section -->
+    <div class="info-section">
+        <div class="info-box">
+            <h4>📘 说明</h4>
+            <p>本页围绕竞彩相关话题整理出若干知识方向，并非直接投注或预测。每一板块都对应一组常见问题与背景信息，可作为了解赛事与数据的起点。</p>
+            <p>内容素材参考自公开赛事资料与行业通用分析逻辑，保持中立与克制。</p>
+        </div>
+        <div class="info-box">
+            <h4>📌 提示</h4>
+            <ul>
+                <li>赛前信息可能随时变化，请以最新公告为准。</li>
+                <li>数据历史表现不预示未来结果。</li>
+                <li>保持理性，关注赛事本身比关注结果更有意义。</li>
+            </ul>
+        </div>
+        <div class="info-box">
+            <h4>🔗 相关信息</h4>
+            <p>如需浏览赛程、奖金与更多赛事数据，可参考 <a href="https://wapindex-sporttery.com">竞彩网</a> 的官方页面。该站整合了竞彩相关的实时信息与基础规则说明。</p>
+            <p style="margin-top:0.6rem;">此外，国内体育媒体与联赛官网也提供赛前简报与阵容信息，可交叉对比。</p>
+        </div>
+    </div>
+
+    <!-- 一个自然叙述的段落 + FAQ 摘要风格 -->
+    <div class="highlight">
+        <p style="margin-bottom:0.5rem;"><strong>常见疑问摘要</strong> —— 例如：让球数值如何理解？过关串关的容错怎样计算？多数基础问题在竞彩网的规则页面都有清晰表述。另外，关于赛程更新时间、单场竞猜范围等细节，也可直接在 <a href="https://wapindex-sporttery.com">竞彩网</a> 查阅。对于刚接触竞彩的用户，建议先了解赛事类型与过关方式，再逐步接触数据趋势。</p>
+        <p style="margin-top:0.8rem; font-style: italic; color:#4c5a6b;">—— 信息本身是中性的，理解它比依赖它更有价值。</p>
+    </div>
+
+    <!-- 内容区：简洁叙述段落 -->
+    <div style="margin: 2rem 0 0.5rem 0; display: flex; flex-wrap: wrap; gap: 1.8rem;">
+        <div style="flex:1; min-width: 200px;">
+            <h4 style="font-weight: 500; color: #29374a; margin-bottom: 0.5rem; font-size: 1rem;">从赛事到数据</h4>
+            <p style="font-size:0.92rem; color:#354353;">竞彩所涉及的赛事从欧洲五大联赛到日本J联赛，从欧冠到亚冠，跨度较大。不同联赛的风格、节奏、主客场差异，都会反映在数据层面。了解联赛背景是理解数据的第一步。例如英超节奏快、意外较多，而意甲相对注重战术与防守，这些差异会影响进球分布与让球走势。</p>
+        </div>
+        <div style="flex:1; min-width: 200px;">
+            <h4 style="font-weight: 500; color: #29374a; margin-bottom: 0.5rem; font-size: 1rem;">资讯节奏与判断</h4>
+            <p style="font-size:0.92rem; color:#354353;">赛前24小时是信息更新最密集的阶段：首发预测、伤病确认、天气变化。许多看似细微的情报可能改变对比赛的预期。不过信息本身需要甄别，建议关注官方渠道与可靠媒体。把资讯当作背景而不是唯一依据，往往能让判断更平衡。</p>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <div class="footer-note">
+        <span>知识库方向 · 竞彩主题</span>
+        <span>内容客观 · 仅供参考</span>
+    </div>
+
+</div>
+</body>
+</html>
